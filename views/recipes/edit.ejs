@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title>Cooking App</title>
+</head>
+<body>
+  <div id = "nav-bar">
+  	<a href="/recipes">All Recipes</a><br>
+  	<a href="/recipes/<%=id%>">Back to show</a>
+  </div>
+
+	<h2>Edit Recipe</h2>
+
+	<form action="/recipes/<%=id%>?_method=PUT" method="POST">
+    <input type="text" name="name" value="<%=name%>"><br/>
+    <input type="number" name="cooktime" value="<%=cooktime%>"><br/>
+    <textarea name="ingredients" rows="4" cols="40"><%=ingredients%></textarea><br/>
+    <textarea name="steps" rows="4" cols="40"><%=steps%></textarea><br/>
+    <input type="text" name="img" value="<%=img%>"><br/>
+    <button>Update!</button>
+ </form>
+
+ <form action="/recipes/<%=id%>?_method=DELETE" method="POST">
+	<button>DELETE ME!</button>
+</form>
+
+</body>
+</html>

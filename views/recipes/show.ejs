@@ -1,0 +1,24 @@
+<html>
+<head>
+	<title>Cooking App</title>
+</head>
+<body>
+	<div id = "nav-bar">
+		<a href="/recipes">All Recipes</a>
+	</div>
+
+	<h3>Show Recipe</h3>
+
+	<div id = "recipe-container">
+		<h3><%=recipe.name%></h3>
+		<h4><%=recipe.cooktime%></h4>
+		<p><%=recipe.ingredients%></p>
+		<p><%=recipe.steps%></p>
+		<img id="food-img" src="<%=recipe.img%>">
+	</div>
+
+	<a id ="edit-button" href="/recipes/<%=recipe._id%>/edit">Edit This Product</a>
+
+</body>
+</html>
+

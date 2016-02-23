@@ -1,0 +1,19 @@
+<html>
+<head>
+	<title>Cooking App</title>
+</head>
+<body>
+	<div id = "nav-bar">
+		<a href="/recipes">All Recipes</a>
+		<a href="/users">Back to all users</a>
+	</div>
+
+	<div id="recipes-container">
+		<h3 id="users-title"><%= user.username %>'s recipes</h3>
+		<% for (var i=0; i < user.recipes.length; i++) { %>
+			<p><a href="/recipes/<%=user.recipes[i]._id%>"><%=user.recipes[i].name%></a></p>
+		<% } %>
+	</div>
+
+</body>
+</html>

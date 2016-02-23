@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>Cooking App</title>
+</head>
+<body>
+	<div id = "nav-bar">
+		<a href="/recipes"><p>All Recipes</p></a>
+		<a href="/users"><p>Back to all users</p></a>
+	</div>
+
+	<% if (usertrue)  { %>
+		<a href="/recipes/new">Add a new recipe!</a>
+		<% } %>
+
+		<div id="recipes-container">
+			<h3 id="users-title"><%= user.username %>'s recipes</h3>
+			<% for (var i=0; i < user.recipes.length; i++) { %>
+				<p><a href="/recipes/<%=user.recipes[i]._id%>"><%=user.recipes[i].name%></a></p>
+			<% } %>
+		</div>
+
+		<h3>Add a new recipe!</h3>
+		<form action="/users/<%= user.id %>/newrecipe" method="POST">
+	    <input type="text" name="name" placeholder="Dish Name"><br/>
+	    <input type="number" name="cooktime" placeholder="Cook Time"><br/>
+	    <textarea name="ingredients" rows="4" cols="40" placeholder="Ingredients"></textarea><br/>
+	    <textarea name="steps" rows="4" cols="40" placeholder="Steps"></textarea><br/>
+	    <input type="text" name="img" placeholder="Img URL"><br/>
+	    <button>Add this recipe!</button>
+	 </form>
+
+		<% if (usertrue) { %> 
+			<form action="/users/<%= user.id %>" method="POST">
+				<input type="hidden" name="_method" value="DELETE">
+				<button id="delete-button">Delete Self</button>
+			</form>
+		<% } %>
+	</div>
+
+</body>
+</html>

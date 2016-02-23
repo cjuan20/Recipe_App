@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title>Cooking App</title>
+</head>
+<body>
+	<div id = "nav-bar">
+		<a href="/">Home</a><br>
+		<a href="/users">Back to cooks</a>
+	</div>
+	
+	<h1>All Recipes</h1>
+	
+	<div id="recipes-container">
+		<ul>
+			<% for(var i = 0; i < recipes.length; i++){ %>
+				<li>
+					<h2><a href="/recipes/<%=recipes[i]._id%>"><%=recipes[i].name%></a></h2>
+					<img id="food-img" src="<%=recipes[i].img%>">
+	   		</li>
+		  <% } %>
+		 </ul>
+	</div>
+
+</body>
+</html>

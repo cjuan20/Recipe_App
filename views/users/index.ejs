@@ -1,0 +1,44 @@
+<html>
+<head>
+	<title>Cooking App</title>
+</head>
+<body>
+	<div id = "nav-bar">
+		<a href="/recipes">See all recipes</a>
+	</div>
+	
+	<% if (!login) { %>
+		<h2>Please login or signup</h2>
+	<% } %>
+
+	<% if (!login) { %>
+		<h4>Sign up</h4>
+		<form action="/users" method="POST">
+			<input type="text" name="username" placeholder="username"><br/>
+			<input type="text" name="email" placeholder="email"><br/>
+			<input type="text" name="password" placeholder="password"><br/>
+			<input type="submit">
+		</form>
+	<br/>
+		<h4>Log in</h4>
+		<form action="/users/login" method="POST">
+			<input type="text" name="email" placeholder="email"><br/>
+			<input type="text" name="password" placeholder="password"><br/>
+			<input type="submit">
+		</form>
+	</br>
+	<% } else { %>
+		<a href="/users/logout"><p>Logout</p></a>
+	<% } %>
+
+	<div id = "users-index"> 
+		<h4>All of cooks</h4>
+		<ul>
+			<% for (var i=0; i < user.length; i ++) { %>
+				<li><a href="/users/view/<%=user[i].id %>"><%= user[i].username %></a></li>
+			<% } %>
+		</ul>
+	</div>
+
+</body>
+</html>
