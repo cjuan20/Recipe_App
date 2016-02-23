@@ -69,6 +69,7 @@ router.post('/:id/newrecipe', function(req, res) {
 	});
 });
 
+//View individual user's recipe
 router.get('/view/:id', function(req, res) {
 			Recipe.find({}, function(err, recipes){
 			//find specific user, base off the id 
@@ -79,10 +80,9 @@ router.get('/view/:id', function(req, res) {
 				})
 			});
 		});
-
 	});
 
-// user create -- signup
+//Signup
 router.post('/', passport.authenticate('local-signup', { 
 	failureRedirect: '/users' }), function(req, res) {
     //success redirect goes to show page
@@ -98,8 +98,21 @@ router.post('/login', passport.authenticate('local-login', {
 });
 
   
-// delete 
-router.delete('/:id', function(req, res) {
+//Delete 
+router.delete('/:id', function(req, res){
+	console.log("Delete BUTTON FIRED")
+	//Find user by id and delete
+	User.findByIdAndRemove(req.params.id, function(err, user){
+		console.log('this is user: ' + user.username);
+		//delete all the recipes associated with this user
+		// for(var i=0; i<user.recipes.length; i++){
+		// 	Recipe.findByIdAndRemove(user.recipes[i].id, function(){})
+		// };
+		res.redirect('/');
+	});
+});
+
+/*router.delete('/:id', function(req, res) {
 	console.log('DELETE ROUTE ACCESSED');
 	User.findById(req.params.id, function(err, user) {
 		if (user.recipes.length == 0) {
@@ -107,7 +120,7 @@ router.delete('/:id', function(req, res) {
 				res.redirect('/users');
 			});
 		} else {
-			user.recipes.forEach(function(location) {
+			user.recipes.forEach(function(rceipe) {
 				Recipe.findOneAndRemove({ _id: recipe.id }, function(err) {
 					if (err) console.log(err);
 				});
@@ -115,9 +128,9 @@ router.delete('/:id', function(req, res) {
 			user.remove(function(err) {
 				res.redirect('/users');
 			});
-		} // end if
-	}); // end User find
-});
+		} 
+	});
+});*/
 
 // middleware to check login status
 // used in show route

@@ -4,13 +4,9 @@
 </head>
 <body>
 	<div id = "nav-bar">
-		<a href="/recipes"><p>All Recipes</p></a>
-		<a href="/users"><p>Back to all users</p></a>
+		<a href="/recipes">All Recipes</a><br>
+		<a href="/users">Back to all users</a>
 	</div>
-
-	<% if (usertrue)  { %>
-		<a href="/recipes/new">Add a new recipe!</a>
-		<% } %>
 
 		<div id="recipes-container">
 			<h3 id="users-title"><%= user.username %>'s recipes</h3>
@@ -30,12 +26,13 @@
 	 </form>
 
 		<% if (usertrue) { %> 
-			<form action="/users/<%= user.id %>" method="POST">
-				<input type="hidden" name="_method" value="DELETE">
-				<button id="delete-button">Delete Self</button>
-			</form>
+			<form action="/users/<%=user.id%>?_method=DELETE" method="POST">
+			<button>Delete Self</button>
+		</form>
+
 		<% } %>
 	</div>
+
 
 </body>
 </html>

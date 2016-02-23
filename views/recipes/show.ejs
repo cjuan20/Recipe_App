@@ -17,7 +17,12 @@
 		<img id="food-img" src="<%=recipe.img%>">
 	</div>
 
-	<a id ="edit-button" href="/recipes/<%=recipe._id%>/edit">Edit This Product</a>
+
+	<% if (loggedIn && usertrue == true) { %> 
+		<a id ="edit-button" href="/recipes/<%=recipe._id%>/edit">Edit This Product</a>
+	<% } %>
+
+
 
 </body>
 </html>

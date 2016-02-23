@@ -1,16 +1,23 @@
-//REQUIREMENTS
+//Requirements
 var express  = require('express');
     router   = express.Router();
     mongoose = require('mongoose');
+    passport = require('passport');
 
-var Recipe = require('../models/recipes.js');
-var User = require('../models/users.js');
+var Recipe = require('../models/recipes');
+var User = require('../models/users');
 
 
 //INDEX
 router.get('/', function(req, res){
 	Recipe.find({}, function(err, data){
 		res.render('recipes/index.ejs', {recipes: data});
+	});
+});
+
+router.get('/json', function(req, res) {
+	Recipe.find(function(err, recipes) {
+		res.send(recipes);
 	});
 });
 
@@ -31,22 +38,29 @@ router.post('/', function(req, res){
 
 //SHOW
 router.get('/:id', function(req, res){
-	Recipe.findById(req.params.id, function(err, data){
-		User.findById(req.params.id, function(err, user) {
+	res.locals.loggedIn = req.isAuthenticated();
+
+	Recipe.findById(req.params.id, function(err, recipe){
+		// res.locals.usertrue = (req.user_id == req.recipes_userId);
+
+		User.findById(req.user.id, function(err, user) {
+			console.log(user);
+			console.log(recipe);
+			if (user._id.toString() == recipe.userId.toString()) { 
+				res.locals.usertrue = true; 
+							console.log("true");
+			} else {
+				res.locals.usertrue = false;
+											console.log("false");
+			};
+
 			res.render('recipes/show.ejs', { 
 				user: user, 
-				recipe: data
+				recipe: recipe
 			});
 		});
 	});
 });
-
-/*//SHOW
-router.get('/:id', function(req, res){
-	Recipe.findById(req.params.id, function(err, data){
-		res.render('recipes/show.ejs', data);
-	});
-});*/
 
 //EDIT
 router.get('/:id/edit', function(req, res){

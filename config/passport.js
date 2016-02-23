@@ -24,8 +24,6 @@ module.exports = function(passport) {
 		passReqToCallback: true
 	}, function(req, email, password, done) {
 
-		console.log('Req.body within local signup: ', req.body);
-
     // find a user whose email is the same as the forms email
     // we are checking to see if the user trying to login already exists
 		User.findOne({ 'email': email }, function(err, user) {
@@ -74,10 +72,12 @@ module.exports = function(passport) {
 			if (!user.validPassword(password)) {
 				return done(null, false);
 			}
-
+			req.session.user = user;
 			return done(null, user);
 		}); // end find user
 	})); // end passport local login
 
 
-} // end module
+}; // end module
+
+
