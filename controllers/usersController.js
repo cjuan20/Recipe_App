@@ -103,11 +103,12 @@ router.delete('/:id', function(req, res){
 	console.log("Delete BUTTON FIRED")
 	//Find user by id and delete
 	User.findByIdAndRemove(req.params.id, function(err, user){
-		console.log('this is user: ' + user.username);
 		//delete all the recipes associated with this user
-		// for(var i=0; i<user.recipes.length; i++){
-		// 	Recipe.findByIdAndRemove(user.recipes[i].id, function(){})
-		// };
+		for(var i=0; i<user.recipes.length; i++){
+			Recipe.findByIdAndRemove(user.recipes[i].id, function(req, res){
+				console.log("RECIPES DELETED!")
+			})
+		};
 		res.redirect('/');
 	});
 });
@@ -144,3 +145,8 @@ function isLoggedIn(req, res, next) {
 }
 
 module.exports = router;
+
+
+
+
+

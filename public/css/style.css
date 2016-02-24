@@ -1,0 +1,61 @@
+* {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-family: 'Didact Gothic', sans-serif;;
+}
+
+body {
+	background-image: url('https://s-media-cache-ak0.pinimg.com/originals/ce/20/b3/ce20b3b29dc38051ce94ee4ed9c8220d.jpg');
+}
+#main-logo img{
+	width: 410px;
+	height: 280px;
+	padding: 2em;
+}
+#nav-bar{
+  width: 100%;
+  height: 3em;
+  background-color: whitesmoke;
+  padding-top: 1.5em;
+}
+span {
+	padding-left: 2em;
+}
+img {
+	width: 370px;
+	height: 280px;
+	border-radius: 30px;
+	padding: 1em;
+}
+ul li {
+	list-style: none;
+	padding: 1em;
+}
+a{
+	color: grey;
+}
+
+a:visited{
+	color: black;
+}
+input {
+	margin: 8px;
+	padding: 10px;
+	border-radius: 20px;
+}
+
+textarea {
+	margin: 8px;
+	padding: 10px;
+	border-radius: 20px;
+}
+
+button {
+	margin: 8px;
+	padding: 10px;
+	background-color: black;
+	color: white;
+	border-radius: 20px;
+	font-size: 18px;
+}

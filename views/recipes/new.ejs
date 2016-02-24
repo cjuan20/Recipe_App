@@ -1,16 +1,16 @@
 <html>
 <head>
-	<title>Cooking App</title>
+  <title>Cooking App</title>
 </head>
 
 <body>
   <div id = "nav-bar">
-  	<a href="/recipes">All recipes</a>
+    <a href="/recipes">All recipes</a>
   </div>
   
-	<h3>Add a new recipe!</h3>
+  <h3>Add a new recipe!</h3>
 
-	<form action="/users/<%= user.id %>/newrecipe" method="POST">
+  <form action="/users/<%= user.id %>/newrecipe" method="POST">
     <input type="text" name="name" placeholder="Dish Name"><br/>
     <input type="number" name="cooktime" placeholder="Cook Time"><br/>
     <textarea name="ingredients" rows="4" cols="40" placeholder="Ingredients"></textarea><br/>

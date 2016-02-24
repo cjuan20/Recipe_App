@@ -1,11 +1,9 @@
-<html>
-<head>
-	<title>Cooking App</title>
-</head>
+<% include ../partials/header.ejs %>
+
 <body>
 	<div id = "nav-bar">
-		<a href="/recipes">All Recipes</a><br>
-		<a href="/users">Back to all users</a><br>
+		<a href="/recipes">All Recipes</a><span>
+		<a href="/users">Back to all users</a><span>
 		
 		<a href="/users/<%=user.id%>">Add a New Recipe</a>
 

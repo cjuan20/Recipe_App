@@ -1,16 +1,14 @@
-<html>
-<head>
-	<title>Cooking App</title>
-</head>
+<% include ../partials/header.ejs %>
+
 <body>
   <div id = "nav-bar">
-  	<a href="/recipes">All Recipes</a><br>
-  	<a href="/recipes/<%=id%>">Back to show</a>
+    <a href="/recipes">All Recipes</a><span>
+    <a href="/recipes/<%=id%>">Back to show</a>
   </div>
 
-	<h2>Edit Recipe</h2>
+  <h2>Edit Recipe</h2>
 
-	<form action="/recipes/<%=id%>?_method=PUT" method="POST">
+  <form action="/recipes/<%=id%>?_method=PUT" method="POST">
     <input type="text" name="name" value="<%=name%>"><br/>
     <input type="number" name="cooktime" value="<%=cooktime%>"><br/>
     <textarea name="ingredients" rows="4" cols="40"><%=ingredients%></textarea><br/>
@@ -20,7 +18,7 @@
  </form>
 
  <form action="/recipes/<%=id%>?_method=DELETE" method="POST">
-	<button>DELETE ME!</button>
+  <button>DELETE ME!</button>
 </form>
 
 </body>
