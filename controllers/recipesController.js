@@ -25,14 +25,11 @@ router.get('/seed/newRecipes', function(req, res) {
 	    img: "http://s.iamafoodblog.com/wp-content/uploads/2016/02/avo-toast-11w.jpg"
 		}
 	];
-
 	Recipe.create(newRecipes, function(err) {
 	      console.log("SEED: NEW RECIPES CREATED!");
 	      res.redirect('/recipes');
 	});
 });
-
-
 
 //INDEX
 router.get('/', function(req, res){
@@ -94,6 +91,13 @@ router.get('/:id', function(req, res){
 router.get('/:id/edit', function(req, res){
 	Recipe.findById(req.params.id, function(err, data){
 		res.render('recipes/edit.ejs', data);
+	});
+});
+
+//LIKE 
+router.put('/:id/like', function(req, res){
+	Recipe.findByIdAndUpdate(req.params.id, {$inc: {like: +1}}, function(err, data){
+		res.redirect('/recipes/' + req.params.id);
 	});
 });
 

@@ -10,7 +10,8 @@ var recipeSchema = Schema({
 	ingredients: {type:String},
 	steps: {type:String},
 	img: {type: String},
-	userId: {type: Schema.Types.ObjectId, ref:'User'}
+	userId: {type: Schema.Types.ObjectId, ref:'User'},
+	like: {type: Number, default: 0}
 });
 
 

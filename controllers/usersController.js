@@ -113,28 +113,7 @@ router.delete('/:id', function(req, res){
 	});
 });
 
-/*router.delete('/:id', function(req, res) {
-	console.log('DELETE ROUTE ACCESSED');
-	User.findById(req.params.id, function(err, user) {
-		if (user.recipes.length == 0) {
-			user.remove(function(err) {
-				res.redirect('/users');
-			});
-		} else {
-			user.recipes.forEach(function(rceipe) {
-				Recipe.findOneAndRemove({ _id: recipe.id }, function(err) {
-					if (err) console.log(err);
-				});
-			});
-			user.remove(function(err) {
-				res.redirect('/users');
-			});
-		} 
-	});
-});*/
-
 // middleware to check login status
-// used in show route
 function isLoggedIn(req, res, next) {
 	console.log('isLoggedIn middleware');
   if (req.isAuthenticated()) {

@@ -15,10 +15,26 @@
 				<li>
 					<h2><a href="/recipes/<%=recipes[i]._id%>"><%=recipes[i].name%></a></h2>
 					<img id="food-img" src="<%=recipes[i].img%>">
+						<p>
+							<button class="like-button" value="<%=recipes[i].id%>">LIKE</button>
+							<span class="like-count" style="padding:0;"><%=recipes[i].like%></span>
+						</p>
+
 	   		</li>
 		  <% } %>
 		 </ul>
 	</div>
+
+	<script type="text/javascript">
+	$('.like-button').on('click', function(){
+		var recipe_id = $(this).attr('value');
+		var span = $(this).next();
+		$.post( "/recipes/"+recipe_id+"/like?_method=PUT", function( data ) {
+			var likeTotal = span.text();
+			span.text(parseInt(likeTotal) + 1);
+		});
+	})
+	</script>
 
 </body>
 </html>

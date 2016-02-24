@@ -3,7 +3,7 @@ var express        = require('express'),
     app            = express(),
     bodyParser     = require('body-parser'),
     methodOverride = require('method-override'),
-    port           = 3000 || process.env.PORT;
+    port           = process.env.PORT || 3000;
     morgan         = require('morgan');
     mongoose       = require('mongoose');
     passport       = require('passport'),
@@ -38,7 +38,8 @@ app.get('/', function(req, res){
 
 
 //Mongoose connection & App.listen
-mongoose.connect('mongodb://localhost:27017/cooking_app');
+var mongoUri = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/cooking_app';
+mongoose.connect(mongoUri);
 
 mongoose.connection.once('open', function(){
 	console.log('mongoose connection made!');

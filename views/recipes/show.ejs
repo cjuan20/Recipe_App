@@ -9,10 +9,14 @@
 
 	<div id = "recipe-container">
 		<h3><%=recipe.name%></h3>
-		<h4><%=recipe.cooktime%></h4>
+		<h4><%=recipe.cooktime%> mins</h4>
 		<p><%=recipe.ingredients%></p>
 		<p><%=recipe.steps%></p>
 		<img id="food-img" src="<%=recipe.img%>">
+
+ 	 <form action = "/recipes/<%=recipe.id%>/like?_method=PUT" method="POST">
+		 	<p><button id ="like-button">LIKE</button><%=recipe.like%></p>
+ 	 </form>
 	</div>
 
 
