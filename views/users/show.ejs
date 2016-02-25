@@ -1,34 +1,40 @@
 <% include ../partials/header.ejs %>
 
 <body>
-	<div id = "nav-bar">
+	<div class = "nav-bar">
 		<a href="/recipes">All Recipes</a><span>
 		<a href="/users">Back to all users</a>
 	</div>
 
-		<div id="recipes-container">
+	<div id="curr-wrapper">
+		<div id="curr-recipe-index">
 			<h3 id="users-title"><%= user.username %>'s recipes</h3>
 			<% for (var i=0; i < user.recipes.length; i++) { %>
 				<p><a href="/recipes/<%=user.recipes[i]._id%>"><%=user.recipes[i].name%></a></p>
 			<% } %>
 		</div>
 
-		<h3>Add a new recipe!</h3>
-		<form action="/users/<%= user.id %>/newrecipe" method="POST">
-	    <input type="text" name="name" placeholder="Dish Name"><br/>
-	    <input type="number" name="cooktime" placeholder="Cook Time"><br/>
-	    <textarea name="ingredients" rows="4" cols="40" placeholder="Ingredients"></textarea><br/>
-	    <textarea name="steps" rows="4" cols="40" placeholder="Steps"></textarea><br/>
-	    <input type="text" name="img" placeholder="Img URL"><br/>
-	    <button>Add this recipe!</button>
-	 </form>
+		<div id="curr-add-recipe">
+			<h3>Add a new recipe!</h3>
+			<form action="/users/<%= user.id %>/newrecipe" method="POST">
+		    <input type="text" name="name" placeholder="Dish Name"><br/>
+		    <input type="number" name="cooktime" placeholder="Cook Time"><br/>
+		    <textarea name="ingredients" rows="4" cols="40" placeholder="Ingredients"></textarea><br/>
+		    <textarea name="steps" rows="4" cols="40" placeholder="Steps"></textarea><br/>
+		    <input type="text" name="img" placeholder="Img URL"><br/>
+		    <button>Add this recipe!</button>
+		 	</form>
+		 </div>
+		</div>
 
-		<% if (usertrue) { %> 
-			<form action="/users/<%=user.id%>?_method=DELETE" method="POST">
-			<button>Delete Self</button>
-		</form>
+		
+		<div id="curr-delete-self">
+			<% if (usertrue) { %> 
+				<form action="/users/<%=user.id%>?_method=DELETE" method="POST">
+				<button>Delete Self</button>
+				</form>
+			<% } %>
+		</div>
 
-		<% } %>
-	</div>
 </body>
 </html>

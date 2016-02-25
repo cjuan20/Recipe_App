@@ -1,21 +1,19 @@
 <% include ../partials/header.ejs %>
 
 <body>
-	<div id = "nav-bar">
+	<div class = "nav-bar">
 		<a href="/recipes">All Recipes</a>
 	</div>
 
-	<h3>Show Recipe</h3>
-
-	<div id = "recipe-container">
-		<h3><%=recipe.name%></h3>
-		<h4><%=recipe.cooktime%> mins</h4>
-		<p><%=recipe.ingredients%></p>
-		<p><%=recipe.steps%></p>
+	<div id = "recipe-show">
+		<h3><%=recipe.name%></h3><br>
+		<img id ="cooktime-logo" src="../css/icons/icon-81104.png"><h4><%=recipe.cooktime%> mins</h4><br>
+		<p><%=recipe.ingredients%></p><br>
+		<p><%=recipe.steps%></p><br>
 		<img id="food-img" src="<%=recipe.img%>">
 
  	 <form action = "/recipes/<%=recipe.id%>/like?_method=PUT" method="POST">
-		 	<p><button id ="like-button">LIKE</button><%=recipe.like%></p>
+		 	<button class="like-button"></button><%=recipe.like%>
  	 </form>
 	</div>
 

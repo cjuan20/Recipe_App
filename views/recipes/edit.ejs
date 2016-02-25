@@ -1,12 +1,12 @@
 <% include ../partials/header.ejs %>
 
 <body>
-  <div id = "nav-bar">
+  <div class = "nav-bar">
     <a href="/recipes">All Recipes</a><span>
     <a href="/recipes/<%=id%>">Back to show</a>
   </div>
 
-  <h2>Edit Recipe</h2>
+  <div id="edit-header"><h2>Edit Recipe</h2></div>
 
   <form action="/recipes/<%=id%>?_method=PUT" method="POST">
     <input type="text" name="name" value="<%=name%>"><br/>

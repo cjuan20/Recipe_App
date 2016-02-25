@@ -1,13 +1,15 @@
 <% include ../partials/header.ejs %>
 
 <body>
-	<div id = "nav-bar">
-		<a href="/">Home</a><span>
+	<div class = "nav-bar">
+		<a href="/"><img src="../css/icons/nav-logo.png"></a>
 		<a href="/users">All Users</a><span>
 		<a href="/users">Log Out</a>
 	</div>
 	
-	<h1>All Recipes</h1>
+	<div id="recipe-header"><h1>All Recipes<img id="recipe-logo" src="../css/icons/icon-81672.png"></h1>
+	</div>
+
 	
 	<div id="recipes-container">
 		<ul>
@@ -16,7 +18,7 @@
 					<h2><a href="/recipes/<%=recipes[i]._id%>"><%=recipes[i].name%></a></h2>
 					<img id="food-img" src="<%=recipes[i].img%>">
 						<p>
-							<button class="like-button" value="<%=recipes[i].id%>">LIKE</button>
+							<button class="like-button" value="<%=recipes[i].id%>"></button>
 							<span class="like-count" style="padding:0;"><%=recipes[i].like%></span>
 						</p>
 

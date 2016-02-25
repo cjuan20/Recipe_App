@@ -13,18 +13,36 @@ body {
 	height: 280px;
 	padding: 2em;
 }
-#nav-bar{
+
+.nav-bar img{
+  width: 85px;
+  height: 75px;
+  padding-top: 0;
+  vertical-align: top;
+  margin-top: -20px;
+  margin-right: 20px;
+}
+
+.nav-bar{
   width: 100%;
-  height: 3em;
+  height: 55px;
   background-color: whitesmoke;
   padding-top: 1.5em;
+  position: relative;
+  font-size: 20px;
 }
+
+.nav-bar a{
+	text-decoration: none;
+}
+
+
 span {
 	padding-left: 2em;
 }
 img {
-	width: 370px;
-	height: 280px;
+	width: 480px;
+	height: 320px;
 	border-radius: 30px;
 	padding: 1em;
 }
@@ -32,8 +50,9 @@ ul li {
 	list-style: none;
 	padding: 1em;
 }
+
 a{
-	color: grey;
+	color: black;
 }
 
 a:visited{
@@ -54,11 +73,156 @@ textarea {
 button {
 	margin: 8px;
 	padding: 10px;
-	background-color: black;
+	background-color: #B5A7BF;
 	color: white;
 	border-radius: 20px;
 	font-size: 18px;
 }
-#like-button{
+.like-button{
 	background-color: red;
+	background: url('icons/heart.png')center no-repeat;
+	background-size: 100%;
+	width: 45px;
+	height: 45px;
 }
+#heart-like{
+	width: 40px;
+	height: 40px;
+}
+#user-index-wrapper{
+  width:1150px;
+  margin:0 auto;
+  position:relative;
+  left:0px;
+  top:0px;
+}
+#user-index-wrapper h2{
+	margin-top: 1.5em;
+	color: #545555;
+}
+#user-index-wrapper h3{
+	font-weight: bolder;
+	color: #1E7F91;
+	font-size: 40px;
+}
+
+#login{
+  position: absolute;
+  left: 721px;
+  top: 70px;
+  width: 300px;
+  height: 422px;
+  text-align: center;
+  padding-top: 1em;
+}
+#signup{
+  position: absolute;
+  left: 370px;
+  top: 66px;
+  width: 349px;
+  height: 422px;
+  text-align: center;
+  padding-top: 1em;
+}
+#users-index{
+  position: absolute;
+  left: 102px;
+  top: 66px;
+  width: 266px;
+  height: 422px;
+  text-align: center;
+  padding-top: 1em;
+}
+
+#recipe-header h1{
+	color: #1E7F91;
+	padding-top: 14px;
+}
+#recipe-logo{
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	padding: 0;
+}
+#recipes-container a{
+	text-decoration: none;
+	color: #545555;
+}
+#recipes-container a:visited{
+	color: #545555;
+}
+
+#recipe-show{
+	padding-left: 14em;
+	padding-right: 14em;
+	padding-bottom: 5em;
+}
+#recipe-show h3{
+	font-weight: bolder;
+	color: #1E7F91;
+	font-size: 32px;
+	padding-top: 10px;
+}
+#cooktime-logo{
+	width: 40px;
+  height: 40px;
+  display: inline-block;
+  padding: 5px;
+}
+#curr-wrapper{
+	width:1150px;
+  margin:0 auto;
+  position:relative;
+  left:0px;
+  top:0px;
+}
+#curr-recipe-index{
+  position: absolute;
+  left: 272px;
+  top: 66px;
+  width: 266px;
+  height: 422px;
+  text-align: center;
+  padding-top: 1em;
+}
+#curr-recipe-index p{
+	font-size: 20px;
+	padding: 2px;
+}
+#curr-add-recipe{
+	position: absolute;
+  left: 580px;
+  top: 66px;
+  width: 349px;
+  height: 422px;
+  text-align: center;
+  padding-top: 1em;
+}
+
+#curr-delete-self{
+	position: absolute;
+  bottom: -460px;
+  right: 610px;
+  text-align: center;
+  border-top: 2px solid grey;
+}
+#curr-delete-self button{
+	background-color: #73001C;
+	}
+#curr-wrapper h3{
+	font-weight: bolder;
+	color: #1E7F91;
+	font-size: 35px;
+}
+
+#edit-button{
+	padding-bottom: 4em;
+	font-size: 20px;
+	color: #99324C;
+}
+#edit-header h2{
+	color: #1E7F91;
+	font-size: 35px;
+}
+
+

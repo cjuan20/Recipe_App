@@ -23,6 +23,12 @@ router.get('/seed/newRecipes', function(req, res) {
 	    ingredients:"1 avocado, 10-12 thin slices of toast, 1 handful baby arugula, 6 pieces of laver roasted seaweed, 1-2 tablespoons ikura, toasted white and black sesame seeds, salt and pepper to taste",
 	    steps: "Place the avocado on a cutting board and cut lengthwise, in the middle carefully, rotating around the seed. Twist half of the avocado off and remove. Place the remaining half (with the pit) on a dish towel and carefully tap your knife into the pit so that it wedges itself in. Twist the knife and remove the pit. Place the avocado, cut side down on to your cutting board and peel off the skin. Cut into 10-12 thin slices. Top slices of toast with arugula, half a piece of laver, 2 avocado slices, sesame seed and salt and pepper to taste. Enjoy!",
 	    img: "http://s.iamafoodblog.com/wp-content/uploads/2016/02/avo-toast-11w.jpg"
+		},{
+	    name: "Mini Chicken Chili Cups",
+	    cooktime: 60,
+	    ingredients:"1/2 tablespoon oil, 1 lb ground chicken, 1 small onion, chopped, 1 clove garlic, 1 red pepper, 1-2 fresno chilis, diced, 1 carrot, diced, 1 celery stalk, diced, 1 teaspoon cumin, 1 teaspoon cayenne, 1/2 teaspoon paprika, 2 teaspoons red pepper flakes, or to taste, 28 ounce can whole tomatoes",
+	    steps: "Add a bit of oil to a deep, heavy-bottomed pot. Heat over medium high until hot and then add the chicken and brown, breaking up until crumbly and cooked through, about 5-6 minutes. Use a slotted spoon to remove the chicken from the pot and set aside. Add the onion, garlic, red pepper, fresnos (if using) carrot, celery, and spices to the pot and cook, stirring occasionally until soft, about 5-7 minutes. Add the chicken and the tomatoes back in, crushing the tomatoes with the back of a spoon. Turn down the heat and let simmer until thick, stirring occasionally, 30-40 minutes. Preheat the oven to 375°F. Use a 3 inch cookie cutter to cut rounds out of the tortillas. Save the tortilla scraps to make chips with. Push the tortilla rounds into a mini muffin tin and bake until slightly golden and crisp, 5-7 minutes. Let cool in the tin and remove carefully. Fill the cups with chili and top with shredded cheddar, avocado, green onions and a squeeze of Daisy Sour cream. Enjoy!",
+	    img: "http://s.iamafoodblog.com/wp-content/uploads/2015/12/chicken-chili-cups-7.jpg"
 		}
 	];
 	Recipe.create(newRecipes, function(err) {
