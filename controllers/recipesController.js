@@ -7,7 +7,7 @@ var express  = require('express');
 var Recipe = require('../models/recipes');
 var User = require('../models/users');
 
-//SEED
+/*//SEED
 router.get('/seed/newRecipes', function(req, res) {
 
 	var newRecipes = [
@@ -35,7 +35,7 @@ router.get('/seed/newRecipes', function(req, res) {
 	      console.log("SEED: NEW RECIPES CREATED!");
 	      res.redirect('/recipes');
 	});
-});
+});*/
 
 //INDEX
 router.get('/', function(req, res){
